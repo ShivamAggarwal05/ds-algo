@@ -1,0 +1,79 @@
+package com;
+
+import java.util.Stack;
+
+public class P_01032018 {
+	static Stack<Integer> stk1=new Stack<Integer>();
+	static Stack<Integer> stk2=new Stack<Integer>();
+	
+	public static void main(String[] args) {
+		//exchangeVar(10,15);
+		implQueueUsingStk();
+	}
+	
+	//1. exchange 2 var without using 3rd variable
+	static void exchangeVar(int a,int b){
+		exchangeVarWayOne(a,b);
+		exchangeVarWayTwo(a,b);
+	}
+	static void exchangeVarWayOne(int a,int b){
+		a=a+b;
+		b=a-b;
+		a=a-b;
+		
+		System.out.println("a="+a+" b="+b);
+	}
+	static void exchangeVarWayTwo(int a,int b){
+		a=a^b;
+		b=a^b;
+		a=a^b;
+		
+		System.out.println("a="+a+" b="+b);
+	}
+	
+	//2. implement queue using stack
+	static void implQueueUsingStk(){
+		enqueue(1);
+		enqueue(2);
+		enqueue(3);
+		dequeue();
+		enqueue(4);
+		queSize();
+		dequeue();
+		dequeue();
+		dequeue();
+		isEmpty();
+		enqueue(5);
+		enqueue(6);
+		queSize();
+	}
+	
+	static void enqueue(int elem){
+		stk1.push(elem);
+	}
+	static int dequeue(){
+		if(stk2.isEmpty()){
+			while(!stk1.isEmpty()){
+				stk2.push(stk1.pop());
+			}
+		}
+		return stk2.pop();
+		
+	}
+	static boolean isEmpty(){
+		return stk1.isEmpty() && stk2.isEmpty();
+	}
+	static int queSize(){
+		return stk1.size()+stk2.size();
+	}
+	
+	//3. next greatest element
+	static void nextGreatestElement(){
+		
+	}
+	
+	//4. find if a no. is prime or not
+	static boolean isPrime(){
+		return true;
+	}
+}

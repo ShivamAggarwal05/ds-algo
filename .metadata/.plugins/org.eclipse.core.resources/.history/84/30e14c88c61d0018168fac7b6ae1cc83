@@ -1,0 +1,44 @@
+package com;
+
+public class P_01032018 {
+
+	//1. exchange 2 var without using 3rd variable
+	//2. implement queue using stack
+	//3. next greatest element
+	//4. find if a no. is prime or not
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		exchangeVar(10,15);
+	}
+
+	static void exchangeVar(int a,int b){
+		exchangeVarWayOne(a,b);
+		exchangeVarWayTwo(a,b);
+	}
+	static void exchangeVarWayOne(int a,int b){
+		 a=a+b;
+		b=a-b;
+		a=a-b;
+		System.out.println("a="+a+" b="+b);
+	}
+	static void exchangeVarWayTwo(int a,int b){
+		a=a^b;
+		b=a^b;
+		a=a^b;
+		
+		System.out.println("a="+a+" b="+b);
+	}
+	
+	static void implQueueUsingStk(){
+		
+	}
+	
+	static void nextGratestElement(){
+		
+	}
+	
+	static boolean isPrime(){
+		return true;
+	}
+}
